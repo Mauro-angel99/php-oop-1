@@ -42,6 +42,8 @@ $movie1->setYear(2012);
 $movie2->setYear(2013);
 $movie3->setYear(2001);
 
+$movies = [$movie1, $movie2, $movie3];
+
 ?>
 
 
@@ -57,27 +59,15 @@ $movie3->setYear(2001);
 
 <body>
     <h1>FILM</h1>
+    <?php foreach ($movies as $movie) : ?>
     <section>
-        <h2><?= $movie1->title ?></h2>
-        <h4><?= $movie1->genre ?></h4>
-        <p><?= $movie1->plot ?></p>
-        <h4><?= $movie1->linguage ?></h4>
-        <h4><?= $movie1->year ?></h4>
+        <h2><?= $movie->title ?></h2>
+        <h4><?= $movie->genre ?></h4>
+        <p><?= $movie->plot ?></p>
+        <h4><?= $movie->linguage ?></h4>
+        <h4><?= $movie->year ?></h4>
     </section>
-    <section>
-        <h2><?= $movie2->title ?></h2>
-        <h4><?= $movie2->genre ?></h4>
-        <p><?= $movie2->plot ?></p>
-        <h4><?= $movie2->linguage ?></h4>
-        <h4><?= $movie2->year ?></h4>
-    </section>
-    <section>
-        <h2><?= $movie3->title ?></h2>
-        <h4><?= $movie3->genre ?></h4>
-        <p><?= $movie3->plot ?></p>
-        <h4><?= $movie3->linguage ?></h4>
-        <h4><?= $movie3->year ?></h4>
-    </section>
+    <?php endforeach ; ?>
 </body>
 
 </html>
